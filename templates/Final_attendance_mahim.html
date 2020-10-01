@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <A HREF="file:///C:/Users/N.J/Desktop/Final_attendnace_unit%201/templates/Final_attendance_unit1.html">Manufacturing Plant 1</A>
+    <A HREF="file:///C:/Users/N.J/Desktop/Final_attendance/templates/final_attendance.html">Manufacturing Plant 2</A>
+    <A HREF="file:///C:/Users/N.J/Desktop/Final_attendance_all_brancehs/templates/Final_attendance_all_branches.html">All Other Branches</A>
+
+    <div style="color:blue">
+        <form action="{{ url_for('html_table')}}" method="post">
+            <h2>ATTENDANCE FORECASTING(MAHIM PLANT)</h2>
+            <h3>Department</h3><br><select name="Department" id="fuel" required="required">
+                <option value="BANGALORE / HYDERABAD MARKETING">BANGALORE / HYDERABAD MARKETING</option>
+                <option value="CCD">CCD</option>
+                <option value="DIRECTOR ASSISTANT">DIRECTOR ASSISTANT</option>
+		<option value="EXPORTS LOGISTIC">EXPORTS LOGISTIC</option>
+		<option value="EXPORTS MARKETING">EXPORTS MARKETING</option>
+		<option value="IT SUPPORT / ADMIN">IT SUPPORT / ADMIN</option>
+		<option value="MINCO MARKETING">MINCO MARKETING</option>
+		<option value="MUMBAI MARKETING">MUMBAI MARKETING</option>
+		<option value="ORDER EXECUTION">ORDER EXECUTION</option>
+		<option value="REGISTRATION">REGISTRATION</option>
+            </select>
+            <h3>Month</h3><br><select name="Month" id="research" required="required">
+                <option value="January">January</option>
+                <option value="February">February</option>
+                <option value="March">March</option>
+		<option value="April">April</option>
+		<option value="May">May</option>
+		<option value="June">June</option>
+		<option value="July">July</option>
+		<option value="August">August</option>
+		<option value="September">September</option>
+		<option value="October">October</option>
+		<option value="November">November</option>
+		<option value="December">December</option>
+            </select>
+	    <h3>Year</h3><br><input id="second" name="Year" required="required">
+            <br><br><button id="sub" type="submit ">Predict Attendance</button>
+            <br>
+
+
+
+
+        </form>
+
+	
+
+
+
+        <br><br><h3>
+	{% for table in tables %}
+            	{{titles[loop.index]}}
+            	{{ table|safe }}
+	{% endfor %}
+    </div>
+
+
+
+
+    <style>
+        body {
+            background-color: lightslategray;
+            text-align: center;
+            padding: 0px;
+        }
+        
+        #research {
+            font-size: 18px;
+            width: 100px;
+            height: 23px;
+            top: 23px;
+        }
+        
+        #box {
+            border-radius: 60px;
+            border-color: 45px;
+            border-style: solid;
+            font-family: cursive;
+            text-align: center;
+            background-color: rgb(168, 131, 61);
+            font-size: medium;
+            position: absolute;
+            width: 700px;
+            bottom: 9%;
+            height: 850px;
+            right: 30%;
+            padding: 0px;
+            margin: 0px;
+            font-size: 14px;
+        }
+        
+        #fuel {
+            width: 83px;
+            height: 43px;
+            text-align: center;
+            border-radius: 14px;
+            font-size: 20px;
+        }
+        
+        #fuel:hover {
+            background-color: coral;
+        }
+        
+        #research {
+            width: 99px;
+            height: 43px;
+            text-align: center;
+            border-radius: 14px;
+            font-size: 18px;
+        }
+        #second {
+            border-radius: 14px;
+            height: 25px;
+            font-size: 20px;
+            text-align: center;
+        }
+
+	table {
+    		font-family: arial, sans-serif;
+    		border-collapse: collapse;
+    		width: 100%;
+	}
+
+	td, th {
+    		border: 1px solid #dddddd;
+    		text-align: left;
+    		padding: 8px;
+	}
+
+	tr:nth-child(even) {
+    		background-color: #dddddd;
+	}
+    </style>
+</body>
+
+</html>
